@@ -1,0 +1,39 @@
+#include <iostream>
+class RekeningBank
+{
+private:
+    double saldo;
+
+public:
+    RekeningBank(double saldo_awal)
+    {
+        saldo = saldo_awal;
+    }
+    void setor(double jumlah)
+    {
+        saldo += jumlah;
+        std::cout << "Setor berhasil. Saldo sekarang: " << saldo << std::endl;
+    }
+    void tarik(double jumlah)
+    {
+        if (jumlah > saldo)
+        {
+            std::cout << "Penarikan Gagal" << std::endl;
+        }
+        else
+        {
+            saldo -= jumlah;
+            std::cout << "Penarikan berhasil. Sisa saldo: " << saldo << std::endl;
+        }
+    }
+};
+
+int main()
+{
+    RekeningBank akun1(5000.0);
+    akun1.setor(200.0);
+    akun1.tarik(4100.0);
+    akun1.setor(699.0);
+    akun1.tarik(10000.0);
+    return 0;
+}
