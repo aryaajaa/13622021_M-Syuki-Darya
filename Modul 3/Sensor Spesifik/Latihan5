@@ -1,9 +1,8 @@
 #include <iostream>
 
 // Class Induk (Base Class)  
-class SensorDasar {  
-private:   
-    // Menggunakan protected agar bisa diwariskan ke Anak diubah ke Private
+class SensorDasar { 
+protected: // Menggunakan 'protected' agar bisa diakses langsung oleh Class Anak
     int id_sensor;  
     double nilai_bacaan;
 
@@ -26,7 +25,7 @@ public:
 
     // Method khusus milik Anak  
     void kalibrasiDanCetak() {  
-        // Anak BISA memanggil nilai_bacaan secara langsung berkat 'protected'  
+        // Berhasil! Anak BISA memanggil nilai_bacaan dan id_sensor secara langsung
         double kalibrasi = nilai_bacaan + 1.5;   
         std::cout << "Sensor Suhu ID " << id_sensor   
                   << " | Kalibrasi: " << kalibrasi << " C\n";  
