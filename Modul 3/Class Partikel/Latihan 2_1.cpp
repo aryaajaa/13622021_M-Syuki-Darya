@@ -1,7 +1,7 @@
 #include <iostream>
 
 class Partikel {  
-private:  
+public:  
     // Atribut terkunci (tidak bisa diakses langsung dari main)  
     double posisi_x, posisi_y;
 
